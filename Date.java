@@ -13,10 +13,6 @@ public class Date {
         System.out.println(formatedNow);
 
 
-        //예약할 날짜 입력하기
-//        Scanner kbd = new Scanner(System.in);
-//        System.out.print("예약하실 날짜를 입력해주세요 : ");
-//        int day = kbd.nextInt();
 
     }
 }

@@ -1,10 +1,9 @@
 package com.sumin.home;
 
+import java.util.Scanner;
+
 public class Start {
-    //    출발 지역
-    String[] start = {"서울", "수원", "천안아산", "대전", "김천", "대구", "경주", "울산", "부산"};
-    //    도착 지역
-    String[] arrive = {"서울", "수원", "천안아산", "대전", "김천", "대구", "경주", "울산", "부산"};
+
 
     //    승객 연령대
     String adult = "어른";
