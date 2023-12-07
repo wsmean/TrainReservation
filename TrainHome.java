@@ -1,3 +1,5 @@
+package src;
+
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -43,9 +45,15 @@ public class TrainHome {
 
         System.out.print("\n입력 : ");
         StartIn = kbd.nextLine();
+        System.out.println("startIn 값 : "+ StartIn);
+        System.out.println("arrays.tostring(start) 값 : "+ Arrays.toString(start));
+
 
 //        만약 start 배열에 없는 문자를 입력 했을 경우 -> 출발 가능 지역이 아닙니다 문구 출력
-            if (StartIn != start.length){
+        for (int i = 0; i < start.length; i++) {
+            if (StartIn != )
+        }
+            if (boolean equals()){
                 System.out.println("출발 가능 지역이 아닙니다!!");
                 System.out.print("\n입력 : ");
                 StartIn = kbd.nextLine();
@@ -129,4 +137,6 @@ public class TrainHome {
 
 
     }
+
+
 }
