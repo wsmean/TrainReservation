@@ -27,8 +27,7 @@ public class TrainHome {
         String startin;
         String[] arrive = {"부산", "울산", "경주", "대구", "김천", "대전", "천안아산", "수원", "서울"};
         String arrivein;
-        String[] seat_a = {"A", "B", "C", "D", "E", "F", "G"};
-        String seat;
+
 
 
         int adult = 0;
@@ -72,6 +71,7 @@ public class TrainHome {
             System.out.print("\n입력 : ");
             arrivein = kbd.nextLine();
 
+
 //        만약 arrive 배열에 없는 문자를 입력 했을 경우 -> 도착 가능 지역이 아닙니다 문구 출력
 //        만약 start 배열 값과 arrive 배열 값이 같을 경우 -> 출발 지역과 도착 지역이 같습니다!!! 문구 출력
 
@@ -93,8 +93,9 @@ public class TrainHome {
 
 
             System.out.print("\n입력 : ");
-
             String day_ = kbd.nextLine();
+
+//            if (p_ip[] !="불가능")
 
 
             System.out.println("\n-------------------------------------------------------------------");
@@ -116,6 +117,8 @@ public class TrainHome {
             String time = kbd.nextLine();
 
 
+
+
             System.out.println("\n-------------------------------------------------------------------");
             System.out.print("\n5. 인원 수를 입력하시오 : ex)어른: 1,어린이: 1, 제외는 0 or null\n");
 
@@ -129,9 +132,11 @@ public class TrainHome {
 
             System.out.println("\n-------------------------------------------------------------------");
 
+            String[] seat_a = {"A", "B", "C", "D", "E", "F", "G"};
             int sum = adult + child + disabled;
             int seat_num = 1;
 
+            Scanner sc = new Scanner(System.in);
 
 
             System.out.print("\n6. 좌석 번호를 입력하시오 ex) A3,A4\n");
@@ -139,16 +144,71 @@ public class TrainHome {
 
 
             for (int i = 0; i < seat_a.length; i++) {
-                System.out.println("[" + seat_a[i] + "1-4]" + "□ □  □ □");
+                System.out.println("[" + seat_a[i] + "1-4] " + "□ □  □ □");
 
             }
 
-//            System.out.print("\n입력 : ");
-//            seat = kbd.nextLine();
-//            System.out.println("좌석은"+seat);
+
+            while (sum == 0)
+            {
+                System.out.print("인원수를 다시 입력해주세요 :");
+                System.out.print("\n 어른: ");
+                adult = kbd.nextInt();
+                System.out.print("어린이: ");
+                child = kbd.nextInt();
+                System.out.print("장애인: ");
+                disabled = kbd.nextInt();
+                sum = adult + child + disabled;
+
+            }
+
+                String seat ="";
+            if (sum >= 0) {
+                for (int i = 1; i <= sum; i++) {
+                    System.out.print( i+".좌석 : ");
+                    seat = sc.nextLine();
+                    System.out.println("입력한 좌석명은 "+seat+"입니다");
+                    }
+                }
 
 
-            System.out.println("\n-------------------------------------------------------------------");
+
+        String ok = "";
+        System.out.print("선택하신 좌석이 맞는지 확인 해주세요. ex) 예, 아니오");
+        System.out.println("확인 : ");
+        ok = sc.nextLine();
+
+        while (ok.equals("아니오"))
+        {
+            System.out.print("좌석을 다시 입력해주세요 :");
+            if (sum >= 0) {
+                for (int i = 1; i <= sum; i++) {
+                    System.out.print( i+".좌석 : ");
+                    seat = sc.nextLine();
+                    System.out.println("입력한 좌석 번호는 "+seat+"입니다");
+                }
+                System.out.print("선택하신 좌석이 맞는지 확인 해주세요. ex) 예, 아니오");
+                System.out.println("확인 : ");
+                ok = sc.nextLine();
+            }
+        }
+
+        if (ok.equals("예"))
+        {
+            for (int i = 0; i < seat_a.length; i++) {
+                System.out.println("[" + seat_a[i] + "1-4] " + "□ □  □ □");
+
+            }
+        }
+
+
+
+
+
+
+
+
+        System.out.println("\n-------------------------------------------------------------------");
 
 
             System.out.print("\n7. 예약이 완료 되었습니다.\n");
@@ -158,6 +218,7 @@ public class TrainHome {
                     "*  -출발역: " + startin + "                                  *\n" +
                     "*  -도착역: " + arrivein + "                                  *\n" +
                     "*  -예약 인원 : 총 " + sum + "명 (어른: " + adult + " 아이: " + child + " 장애인: " + disabled + ")   *\n" +
+                    "*  -좌석 번호 : "+seat+   "*\n" +
                     "*                                               *\n" +
                     "* * * * * * * * * * * * * * * * * * * * * * * * *\n");
 
