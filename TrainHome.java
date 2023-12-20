@@ -1,4 +1,4 @@
-package src;
+package entity;//package src;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
@@ -44,37 +44,35 @@ public class TrainHome {
 
         System.out.print("\n입력 : ");
         startin = kbd.nextLine();
-//        startin = Arrays.toString(new String[]{kbd.nextLine()});
 
-//        System.out.println("startIn 값 : " + startin);
-//        System.out.println("arrays.tostring(start) 값 : " + Arrays.toString(start));
-
-
-//        만약 start 배열에 없는 문자를 입력 했을 경우 -> 출발 가능 지역이 아닙니다 문구 출력
-//        for (int i = 0; i < start.length; i++) {
-//                if(startin.equals(start[i])){
-//                    System.out.println("출발역이 확인 됐습니다 ");
-//
-//                }else{
-//                    System.out.println("도착 가능 지역이 아닙니다!!");
-//                    System.out.print("\n입력 : ");
-//                    startin = kbd.nextLine();
-//                }
-//            }
-
-//        while (!startin.equals("서울"))
-//        {
-//            System.out.println("도착 가능 지역이 아닙니다!!");
-//            System.out.print("\n입력 : ");
-//            startin = kbd.nextLine();
-//            if (startin.equals(start.toString())){
-//                System.out.println("출발역이 확인 됐습니다.");
-//            }
-//        }
 
         switch (startin)
         {
-            case "서울","수원","대전","김천","천안아산","대구","경주","울산","부산":
+            case "서울":
+                System.out.println("출발역이 확인 됐습니다.");
+                break;
+            case "수원":
+                System.out.println("출발역이 확인 됐습니다.");
+                break;
+            case "대전":
+                System.out.println("출발역이 확인 됐습니다.");
+                break;
+            case "김천":
+                System.out.println("출발역이 확인 됐습니다.");
+                break;
+            case "천안아산":
+                System.out.println("출발역이 확인 됐습니다.");
+                break;
+            case "대구":
+                System.out.println("출발역이 확인 됐습니다.");
+                break;
+            case "경주":
+                System.out.println("출발역이 확인 됐습니다.");
+                break;
+            case "울산":
+                System.out.println("출발역이 확인 됐습니다.");
+                break;
+            case "부산":
                 System.out.println("출발역이 확인 됐습니다.");
                 break;
             default:
@@ -95,23 +93,55 @@ public class TrainHome {
         System.out.print("\n입력 : ");
         arrivein = kbd.nextLine();
 
+        //        만약 start 배열 값과 arrive 배열 값이 같을 경우 -> 출발 지역과 도착 지역이 같습니다!!! 문구 출력
+
+        while(startin.equals(arrivein)) {
+            System.out.println("출발 지역과 도착 지역이 같습니다!!");
+            System.out.print("\n입력 : ");
+            startin = kbd.nextLine();
+        }
+
+        //        만약 arrive 배열에 없는 문자를 입력 했을 경우 -> 도착 가능 지역이 아닙니다 문구 출력
+
         switch (arrivein)
         {
-            case "서울","수원","대전","김천","천안아산","대구","경주","울산","부산":
-                System.out.println("도착역이 확인 됐습니다.");
+            case "서울":
+                System.out.println("출발역이 확인 됐습니다.");
                 break;
-
+            case "수원":
+                System.out.println("출발역이 확인 됐습니다.");
+                break;
+            case "대전":
+                System.out.println("출발역이 확인 됐습니다.");
+                break;
+            case "김천":
+                System.out.println("출발역이 확인 됐습니다.");
+                break;
+            case "천안아산":
+                System.out.println("출발역이 확인 됐습니다.");
+                break;
+            case "대구":
+                System.out.println("출발역이 확인 됐습니다.");
+                break;
+            case "경주":
+                System.out.println("출발역이 확인 됐습니다.");
+                break;
+            case "울산":
+                System.out.println("출발역이 확인 됐습니다.");
+                break;
+            case "부산":
+                System.out.println("출발역이 확인 됐습니다.");
+                break;
             default:
-                System.out.println("도착 가능 지역이 아닙니다!!");
+                System.out.println("출발 가능 지역이 아닙니다!!");
                 System.out.print("\n입력 : ");
                 startin = kbd.nextLine();
-                System.out.println("도착역이 확인 됐습니다.");
+                System.out.println("출발역이 확인 됐습니다.");
 
         }
 
 
-//        만약 arrive 배열에 없는 문자를 입력 했을 경우 -> 도착 가능 지역이 아닙니다 문구 출력
-//        만약 start 배열 값과 arrive 배열 값이 같을 경우 -> 출발 지역과 도착 지역이 같습니다!!! 문구 출력
+
 
 
         System.out.println("\n-------------------------------------------------------------------");
@@ -133,21 +163,21 @@ public class TrainHome {
         System.out.print("\n입력 : ");
         day_ = kbd.nextLine();
 
+        switch(p_ip[(int) (Math.random() * 2)]){
+            case "불가능":
+                System.out.println("입력하신 날짜는 예약이 불가능 합니다.");
+                System.out.print("\n입력 : ");
+                day_ = kbd.nextLine();
+                System.out.println("날짜가 확인 됐습니다.");
+                break;
 
-//        while (day)
-//        {
-//            System.out.println("예약 불가능 일자 입니다");
-//            System.out.print("\n입력 : ");
-//            day_ = kbd.nextLine();
-//            p_ip.toString().equals("가능");
-//        }
+
+        }
 
 
 
         System.out.println("\n-------------------------------------------------------------------");
 
-
-//        int hour = now.getHour();
 
         System.out.print("\n4. 예약 시간을 입력하시오 : ex) 16시\n");
 
@@ -155,17 +185,23 @@ public class TrainHome {
             System.out.print("\n" + "[" + i+ "시 출발]" + "[예약 : " + p_ip[(int) (Math.random() * 2)] + "]");
         }
 
-//        for (int i = hour; i < 24; i++) {
-//            hour++;
-//            System.out.print("\n" + "[" + hour + "시 출발]" + "[예약 : " + p_ip[(int) (Math.random() * 2)] + "]");
-//        }
-
 
 
 
         System.out.print("\n입력 : ");
 
         String time = kbd.nextLine();
+
+        switch(p_ip[(int) (Math.random() * 2)]){
+            case "불가능":
+                System.out.println("입력하신 시간은 예약이 불가능 합니다.");
+                System.out.print("\n입력 : ");
+                time = kbd.nextLine();
+                System.out.println("시간이 확인 됐습니다.");
+                break;
+
+
+        }
 
 
 
@@ -185,13 +221,11 @@ public class TrainHome {
 
         String[] seat_a = {"A", "B", "C", "D", "E", "F", "G"};
         int sum = adult + child + disabled;
-        int seat_num = 1;
 
         Scanner sc = new Scanner(System.in);
 
 
-        System.out.print("\n6. 좌석 번호를 입력하시오 ex) A3,A4\n");
-        System.out.print("\n**입력 가능한 좌석 수는 " + sum + "명 좌석입니다\n");
+
 
         while (sum == 0)
         {
@@ -201,12 +235,15 @@ public class TrainHome {
             System.out.print("어린이: ");
             child = kbd.nextInt();
             System.out.print("장애인: ");
-            System.out.println("");
             disabled = kbd.nextInt();
             sum = adult + child + disabled;
 
         }
 
+        System.out.print("\n6. 좌석 번호를 입력하시오 ex) A3,A4\n");
+        System.out.print("\n**입력 가능한 좌석 수는 " + sum + "명 좌석입니다\n");
+
+        System.out.println("\n ** 좌석 안내 **");
         for (int i = 0; i < seat_a.length; i++) {
             System.out.println("[" + seat_a[i] + "1-4] " + "□ □  □ □");
 
@@ -229,7 +266,7 @@ public class TrainHome {
 
         String ok = "";
         System.out.print("선택하신 좌석이 맞는지 확인 해주세요. ex) 예, 아니오");
-        System.out.println("\n확인 : ");
+        System.out.print("\n확인 : ");
         ok = sc.nextLine();
 
         while (ok.equals("아니오"))
@@ -249,10 +286,7 @@ public class TrainHome {
 
         if (ok.equals("예"))
         {
-//            for (int i = 0; i < seat_a.length; i++) {
-//                System.out.println("[" + seat_a[i] + "1-4] " + "□ □  □ □");
-//
-//            }
+
             System.out.println("예약이 완료 되었습니다. ");
         }
 
@@ -279,5 +313,4 @@ public class TrainHome {
 
     }
 }
-
 
